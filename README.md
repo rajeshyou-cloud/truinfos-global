@@ -82,7 +82,7 @@ npm start
 | `/services` | Services |
 | `/case-studies` | Case Studies |
 | `/contact` | Contact (GET + POST) |
-| `/industry/health-beauty` | Health & Beauty Industry Email Lists |
+| `/industry/it-end-users` | IT End Users Email List |
 | `/industry/it` | IT Industry Email List |
 | `/industry/manufacturing` | Manufacturing Industry Email List |
 | `/industry/banking-finance` | Banking & Finance Email List |

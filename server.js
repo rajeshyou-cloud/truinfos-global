@@ -20,23 +20,23 @@ app.use(express.json());
 
 // ── Template locals ───────────────────────────────────────
 app.locals.year = new Date().getFullYear();
-app.locals.siteName = 'DataBuilderz';
+app.locals.siteName = 'TruInfos Global';
 app.locals.activeIndustry = '';  // overridden per industry route
 
 // ── Industry data ─────────────────────────────────────────
 const INDUSTRIES = {
-  'health-beauty': {
-    label:    'Health & Beauty Industry Email Lists',
-    eyebrow:  'Health & Beauty',
-    hero:     'Reach the right people across the health and beauty supply chain.',
-    lead:     'Our verified Health & Beauty email lists connect you with brand managers, salon owners, spa directors, retail buyers, and wellness professionals across the US and globally.',
+  'it-end-users': {
+    label:    'IT End Users Email List',
+    eyebrow:  'IT End Users',
+    hero:     'Reach professionals who buy, use, and influence IT decisions across every industry.',
+    lead:     'Our IT End Users email list connects you with technology decision-makers and influencers — from IT managers and system administrators to business analysts and operations leads — across manufacturing, healthcare, finance, retail, and beyond.',
     highlights: [
-      { title: 'Targeted Reach',        body: 'Segment by specialty — cosmetics, pharma, organic wellness, professional salon, medical aesthetics, and more.' },
-      { title: 'Decision-Maker Access', body: 'Contacts verified at owner, director, and buyer level across independent retailers and large chains.' },
-      { title: 'Campaign-Ready',        body: 'Deliverable via CSV or CRM-ready formats with email, phone, LinkedIn, and mailing address fields.' }
+      { title: 'Cross-Industry Coverage',  body: 'Target IT buyers and influencers embedded in non-tech companies — the people who evaluate, purchase, and deploy technology solutions.' },
+      { title: 'Role & Department Filters', body: 'Segment by job function — IT management, systems/network administration, help desk, data management, security, and business operations.' },
+      { title: 'Decision-Ready Contacts',  body: 'Contacts verified at manager, director, and C-suite level with confirmed technology purchase authority or influence.' }
     ],
-    fields: ['Full Name', 'Job Title', 'Company', 'Email Address', 'Phone Number', 'Business Type', 'Segment / Specialty', 'City / State / Country', 'LinkedIn Profile', 'Revenue Range'],
-    stats:  [{ value: '1.8M+', label: 'Verified contacts' }, { value: '94%', label: 'Email deliverability' }, { value: '30+', label: 'Specialty segments' }, { value: '48hr', label: 'Delivery turnaround' }]
+    fields: ['Full Name', 'Job Title', 'Company Name', 'Email Address', 'Phone Number', 'Industry Vertical', 'Department', 'Company Size', 'Location', 'LinkedIn Profile'],
+    stats:  [{ value: '4.1M+', label: 'Verified contacts' }, { value: '95%', label: 'Email deliverability' }, { value: '60+', label: 'Industry verticals' }, { value: '48hr', label: 'Delivery turnaround' }]
   },
   'it': {
     label:    'IT Industry Email List',
@@ -108,40 +108,40 @@ const INDUSTRIES = {
 // ── Routes ────────────────────────────────────────────────
 app.get('/', (req, res) => {
   res.render('index', {
-    title: 'DataBuilderz | Digital Marketing and Multi-Domain Data Solutions',
-    description: 'DataBuilderz helps B2B teams grow with digital marketing execution, verified business data, and domain-specific intelligence for better pipeline, outreach, and revenue performance.',
+    title: 'TruInfos Global | Digital Marketing and Multi-Domain Data Solutions',
+    description: 'TruInfos Global helps B2B teams grow with digital marketing execution, verified business data, and domain-specific intelligence for better pipeline, outreach, and revenue performance.',
     activePage: 'home'
   });
 });
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    title: 'About Us | DataBuilderz',
-    description: 'Learn how DataBuilderz helps B2B organizations combine digital marketing strategy, verified data, and disciplined execution to drive sustainable growth.',
+    title: 'About Us | TruInfos Global',
+    description: 'Learn how TruInfos Global helps B2B organizations combine digital marketing strategy, verified data, and disciplined execution to drive sustainable growth.',
     activePage: 'about'
   });
 });
 
 app.get('/services', (req, res) => {
   res.render('services', {
-    title: 'Services | DataBuilderz',
-    description: 'Explore DataBuilderz services spanning digital marketing strategy, performance campaigns, verified business data, enrichment, segmentation, and multi-domain intelligence.',
+    title: 'Services | TruInfos Global',
+    description: 'Explore TruInfos Global services spanning digital marketing strategy, performance campaigns, verified business data, enrichment, segmentation, and multi-domain intelligence.',
     activePage: 'services'
   });
 });
 
 app.get('/case-studies', (req, res) => {
   res.render('case-studies', {
-    title: 'Case Studies | DataBuilderz',
-    description: 'See how DataBuilderz helps B2B organizations improve targeting, campaign performance, and growth outcomes with digital marketing and domain-specific data solutions.',
+    title: 'Case Studies | TruInfos Global',
+    description: 'See how TruInfos Global helps B2B organizations improve targeting, campaign performance, and growth outcomes with digital marketing and domain-specific data solutions.',
     activePage: 'case-studies'
   });
 });
 
 app.get('/contact', (req, res) => {
   res.render('contact', {
-    title: 'Contact | DataBuilderz',
-    description: 'Contact DataBuilderz to discuss digital marketing, B2B data services, and domain-specific intelligence solutions for your organization.',
+    title: 'Contact | TruInfos Global',
+    description: 'Contact TruInfos Global to discuss digital marketing, B2B data services, and domain-specific intelligence solutions for your organization.',
     activePage: 'contact',
     success: false,
     errors: [],
@@ -161,8 +161,8 @@ app.post('/contact', contactValidators, (req, res) => {
 
   if (!errors.isEmpty()) {
     return res.status(400).render('contact', {
-      title: 'Contact | DataBuilderz',
-      description: 'Contact DataBuilderz to discuss digital marketing, B2B data services, and domain-specific intelligence solutions for your organization.',
+      title: 'Contact | TruInfos Global',
+      description: 'Contact TruInfos Global to discuss digital marketing, B2B data services, and domain-specific intelligence solutions for your organization.',
       activePage: 'contact',
       success: false,
       errors: errors.array(),
@@ -181,8 +181,8 @@ app.post('/contact', contactValidators, (req, res) => {
   });
 
   res.render('contact', {
-    title: 'Contact | DataBuilderz',
-    description: 'Contact DataBuilderz to discuss digital marketing, B2B data services, and domain-specific intelligence solutions for your organization.',
+    title: 'Contact | TruInfos Global',
+    description: 'Contact TruInfos Global to discuss digital marketing, B2B data services, and domain-specific intelligence solutions for your organization.',
     activePage: 'contact',
     success: true,
     errors: [],
@@ -195,13 +195,13 @@ app.get('/industry/:slug', (req, res) => {
   const industry = INDUSTRIES[req.params.slug];
   if (!industry) {
     return res.status(404).render('404', {
-      title: '404 Not Found | DataBuilderz',
+      title: '404 Not Found | TruInfos Global',
       description: 'Page not found.',
       activePage: ''
     });
   }
   res.render('industry', {
-    title:          `${industry.label} | DataBuilderz`,
+    title:          `${industry.label} | TruInfos Global`,
     description:    industry.lead,
     activePage:     'industry',
     activeIndustry: req.params.slug,
@@ -212,7 +212,7 @@ app.get('/industry/:slug', (req, res) => {
 // ── 404 ───────────────────────────────────────────────────
 app.use((req, res) => {
   res.status(404).render('404', {
-    title: '404 Not Found | DataBuilderz',
+    title: '404 Not Found | TruInfos Global',
     description: 'Page not found.',
     activePage: ''
   });
@@ -220,5 +220,5 @@ app.use((req, res) => {
 
 // ── Start ─────────────────────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`DataBuilderz running at http://localhost:${PORT}`);
+  console.log(`TruInfos Global running at http://localhost:${PORT}`);
 });
