@@ -28,15 +28,15 @@ const INDUSTRIES = {
   'it-end-users': {
     label:    'IT End Users Email List',
     eyebrow:  'IT End Users',
-    hero:     'Reach professionals who buy, use, and influence IT decisions across every industry.',
-    lead:     'Our IT End Users email list connects you with technology decision-makers and influencers — from IT managers and system administrators to business analysts and operations leads — across manufacturing, healthcare, finance, retail, and beyond.',
+    hero:     'Connect with professionals who actively use enterprise IT products — Finance, HRMS, CRM, ERP, and more.',
+    lead:     'IT End Users are the employees and professionals who operate specific enterprise software platforms day-to-day — from Finance teams running accounting software to HR departments using HRMS platforms and sales teams relying on CRM tools. Our IT End Users email list lets you target these active product users by the exact software category they use, making it the most precise way to market IT-adjacent products, integrations, training, consulting, and migration services.',
     highlights: [
-      { title: 'Cross-Industry Coverage',  body: 'Target IT buyers and influencers embedded in non-tech companies — the people who evaluate, purchase, and deploy technology solutions.' },
-      { title: 'Role & Department Filters', body: 'Segment by job function — IT management, systems/network administration, help desk, data management, security, and business operations.' },
-      { title: 'Decision-Ready Contacts',  body: 'Contacts verified at manager, director, and C-suite level with confirmed technology purchase authority or influence.' }
+      { title: 'Segment by Software Category',  body: 'Reach users of specific platforms — Finance IT (SAP, Oracle Financials, QuickBooks), HRMS (Workday, BambooHR, ADP), CRM (Salesforce, HubSpot, Zoho), ERP (SAP, Microsoft Dynamics, NetSuite), and more.' },
+      { title: 'Real End-User Contacts',         body: 'Unlike IT department lists, these are the actual professionals using the software — accountants, HR managers, sales ops leads, supply chain coordinators — giving you direct access to the people products are built for.' },
+      { title: 'Cross-Industry, Role-Precise',   body: 'IT product users exist in every industry. Filter by sector (healthcare, manufacturing, retail, BFSI), department (Finance, HR, Sales, Operations), or company size to laser-focus your outreach.' }
     ],
-    fields: ['Full Name', 'Job Title', 'Company Name', 'Email Address', 'Phone Number', 'Industry Vertical', 'Department', 'Company Size', 'Location', 'LinkedIn Profile'],
-    stats:  [{ value: '4.1M+', label: 'Verified contacts' }, { value: '95%', label: 'Email deliverability' }, { value: '60+', label: 'Industry verticals' }, { value: '48hr', label: 'Delivery turnaround' }]
+    fields: ['Full Name', 'Job Title', 'Department', 'Software / Platform Used', 'Company Name', 'Email Address', 'Phone Number', 'Industry Vertical', 'Company Size', 'Location'],
+    stats:  [{ value: '5.2M+', label: 'Verified end-user contacts' }, { value: '95%', label: 'Email deliverability' }, { value: '80+', label: 'Software categories covered' }, { value: '48hr', label: 'Delivery turnaround' }]
   },
   'it': {
     label:    'IT Industry Email List',
