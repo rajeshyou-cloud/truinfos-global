@@ -1,7 +1,7 @@
 {
-  "name": "databuilderz",
+  "name": "TruInfos Global",
   "version": "1.0.0",
-  "description": "DataBuilderz - Digital Marketing and Multi-Domain Data Solutions",
+  "description": "TruInfos Global - Digital Marketing and Multi-Domain Data Solutions",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
