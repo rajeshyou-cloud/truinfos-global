@@ -8,6 +8,21 @@
       <a <% if (activePage === 'home') { %>class="active"<% } %> href="/">Home</a>
       <a <% if (activePage === 'about') { %>class="active"<% } %> href="/about">About Us</a>
       <a <% if (activePage === 'services') { %>class="active"<% } %> href="/services">Services</a>
+
+      <div class="nav-dropdown <% if (activePage === 'industry') { %>active<% } %>" id="industry-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Industry Wise Data List <span class="dropdown-caret" aria-hidden="true"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="/industry/health-beauty" role="menuitem" <% if (activeIndustry === 'health-beauty') { %>class="active"<% } %>>Health &amp; Beauty Industry Email Lists</a></li>
+          <li><a href="/industry/it" role="menuitem" <% if (activeIndustry === 'it') { %>class="active"<% } %>>IT Industry Email List</a></li>
+          <li><a href="/industry/manufacturing" role="menuitem" <% if (activeIndustry === 'manufacturing') { %>class="active"<% } %>>Manufacturing Industry Email List</a></li>
+          <li><a href="/industry/banking-finance" role="menuitem" <% if (activeIndustry === 'banking-finance') { %>class="active"<% } %>>Banking &amp; Finance Email List</a></li>
+          <li><a href="/industry/construction" role="menuitem" <% if (activeIndustry === 'construction') { %>class="active"<% } %>>Construction Industry Email List</a></li>
+          <li><a href="/industry/international-mailing" role="menuitem" <% if (activeIndustry === 'international-mailing') { %>class="active"<% } %>>International Mailing List</a></li>
+        </ul>
+      </div>
+
       <a <% if (activePage === 'case-studies') { %>class="active"<% } %> href="/case-studies">Case Studies</a>
       <a <% if (activePage === 'contact') { %>class="active"<% } %> href="/contact">Contact</a>
     </nav>
