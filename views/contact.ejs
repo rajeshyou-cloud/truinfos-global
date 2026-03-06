@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+  <%- include('partials/nav') %>
+
+  <main>
+    <section class="page-hero">
+      <div class="container narrow">
+        <p class="eyebrow">Contact</p>
+        <h1>Let's discuss how DataBuilderz can support your growth objectives.</h1>
+        <p class="lead">Whether you need better campaign performance, cleaner market data, or a more targeted go-to-market program, we can shape an engagement around your business needs.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-layout">
+        <div class="contact-card">
+          <h2>What we can talk about</h2>
+          <ul class="detail-list">
+            <li>Digital marketing strategy and execution</li>
+            <li>B2B lead generation and audience targeting</li>
+            <li>Data sourcing, cleansing, and enrichment</li>
+            <li>Industry-specific datasets and custom builds</li>
+            <li>Multi-channel growth support for sales and marketing teams</li>
+          </ul>
+        </div>
+
+        <% if (success) { %>
+          <div class="alert success">
+            <strong>Message received.</strong> Thank you for reaching out — we'll be in touch shortly.
+          </div>
+        <% } else { %>
+          <%
+            var nameErr    = (errors || []).find(function(e){ return e.path === 'name'; });
+            var companyErr = (errors || []).find(function(e){ return e.path === 'company'; });
+            var emailErr   = (errors || []).find(function(e){ return e.path === 'email'; });
+            var messageErr = (errors || []).find(function(e){ return e.path === 'message'; });
+          %>
+          <form class="contact-form" method="POST" action="/contact" novalidate>
+            <% if (errors.length > 0) { %>
+              <div class="alert error">Please correct the errors below before submitting.</div>
+            <% } %>
+
+            <label>
+              Full Name
+              <input type="text" name="name" placeholder="Your name"
+                value="<%= formData.name || '' %>"
+                class="<%= nameErr ? 'invalid' : '' %>">
+              <% if (nameErr) { %><span class="field-error"><%= nameErr.msg %></span><% } %>
+            </label>
+
+            <label>
+              Company
+              <input type="text" name="company" placeholder="Company name"
+                value="<%= formData.company || '' %>"
+                class="<%= companyErr ? 'invalid' : '' %>">
+              <% if (companyErr) { %><span class="field-error"><%= companyErr.msg %></span><% } %>
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="name@company.com"
+                value="<%= formData.email || '' %>"
+                class="<%= emailErr ? 'invalid' : '' %>">
+              <% if (emailErr) { %><span class="field-error"><%= emailErr.msg %></span><% } %>
+            </label>
+
+            <label>
+              Service Interest
+              <select name="service">
+                <option value="Digital Marketing"     <%= formData.service === 'Digital Marketing'     ? 'selected' : '' %>>Digital Marketing</option>
+                <option value="B2B Data Services"     <%= formData.service === 'B2B Data Services'     ? 'selected' : '' %>>B2B Data Services</option>
+                <option value="Domain-Specific Data"  <%= formData.service === 'Domain-Specific Data'  ? 'selected' : '' %>>Domain-Specific Data</option>
+                <option value="Integrated Engagement" <%= formData.service === 'Integrated Engagement' ? 'selected' : '' %>>Integrated Engagement</option>
+              </select>
+            </label>
+
+            <label>
+              Project Details
+              <textarea name="message" rows="5" placeholder="Tell us about your goals, market, and current challenges."
+                class="<%= messageErr ? 'invalid' : '' %>"><%= formData.message || '' %></textarea>
+              <% if (messageErr) { %><span class="field-error"><%= messageErr.msg %></span><% } %>
+            </label>
+
+            <button class="button primary" type="submit">Request a Consultation</button>
+          </form>
+        <% } %>
+      </div>
+    </section>
+
+    <section class="section dark-panel">
+      <div class="container split-grid">
+        <div>
+          <p class="eyebrow light">Engagement model</p>
+          <h2>Flexible support for focused outcomes.</h2>
+        </div>
+        <div class="card-grid three">
+          <article class="panel-card">
+            <h3>Project-Based</h3>
+            <p>For specific data builds, campaign launches, or short-term growth initiatives.</p>
+          </article>
+          <article class="panel-card">
+            <h3>Retainer Support</h3>
+            <p>For ongoing marketing execution, optimization, and market intelligence delivery.</p>
+          </article>
+          <article class="panel-card">
+            <h3>Custom Hybrid</h3>
+            <p>For businesses that need a combined solution across strategy, data, and execution.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+  <script src="/site.js"></script>
+</body>
+</html>
