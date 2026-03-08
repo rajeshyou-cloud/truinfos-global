@@ -52,7 +52,7 @@ const INDUSTRIES = {
     stats:  [{ value: '3.2M+', label: 'Verified contacts' }, { value: '96%', label: 'Email deliverability' }, { value: '50+', label: 'Technology segments' }, { value: '48hr', label: 'Delivery turnaround' }]
   },
   'manufacturing': {
-    label:    'Manufacturing Industry Email List',
+    label:    'Manufacturing Industry Email Lists',
     eyebrow:  'Manufacturing',
     hero:     'Connect with plant managers, procurement leads, and manufacturing executives.',
     lead:     'Our manufacturing email lists cover decision-makers across industrial, automotive, aerospace, food processing, and consumer goods sectors — giving your team access to the right contacts faster.',
