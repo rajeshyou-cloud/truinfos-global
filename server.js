@@ -28,7 +28,7 @@ const INDUSTRIES = {
   'it-end-users': {
     label:    'IT End Users Email List',
     eyebrow:  'IT End Users',
-    hero:     'Connect with professionals who actively use enterprise IT products — Finance, HRMS, CRM, ERP, and more.',
+    hero:     'Connect with professionals who actively use enterprise IT products — Finance, HRMS, CRM, ERP,BI and more.',
     lead:     'IT End Users are the employees and professionals who operate specific enterprise software platforms day-to-day — from Finance teams running accounting software to HR departments using HRMS platforms and sales teams relying on CRM tools. Our IT End Users email list lets you target these active product users by the exact software category they use, making it the most precise way to market IT-adjacent products, integrations, training, consulting, and migration services.',
     highlights: [
       { title: 'Segment by Software Category',  body: 'Reach users of specific platforms — Finance IT (SAP, Oracle Financials, QuickBooks), HRMS (Workday, BambooHR, ADP), CRM (Salesforce, HubSpot, Zoho), ERP (SAP, Microsoft Dynamics, NetSuite), and more.' },
